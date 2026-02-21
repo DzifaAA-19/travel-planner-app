@@ -1,4 +1,5 @@
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -7,6 +8,8 @@ function App() {
       <main className="max-w-7xl mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold">Welcome to Travel Planner</h1>
       </main>
+    <Footer />
+
     </div>
   )
 }
