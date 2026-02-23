@@ -1,11 +1,12 @@
 import { destinations } from '../data/destinations'
 import DestinationCard from '../components/DestinationCard'
+import WeatherTest from '../components/WeatherTest'
 
 function LandingPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       
-     
+      {/* Hero Section - Matching Figma */}
       <section className="bg-gradient-to-br from-blue-600 to-purple-600 text-white py-24">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
@@ -15,7 +16,7 @@ function LandingPage() {
             Discover, plan and budget your dream trip
           </p>
           
-          
+          {/* Search Bar - Matching Figma */}
           <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-2xl p-2 flex items-center">
             <div className="flex items-center flex-1 px-4">
               <svg className="w-5 h-5 text-gray-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -34,7 +35,7 @@ function LandingPage() {
         </div>
       </section>
 
-      
+      {/* Destinations Grid - Matching Figma */}
       <section className="max-w-7xl mx-auto px-4 py-20">
         <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
           Popular Destinations
@@ -48,6 +49,10 @@ function LandingPage() {
             />
           ))}
         </div>
+      </section>
+
+ <section className="max-w-7xl mx-auto px-4 pb-20">
+        <WeatherTest />
       </section>
 
     </div>
