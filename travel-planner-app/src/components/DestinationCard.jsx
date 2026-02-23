@@ -1,5 +1,8 @@
+import { Link } from 'react-router-dom'
+
 function DestinationCard({ destination }) {
   return (
+        < Link to={`/destinations/${destination.id}`} className="block">
     <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
       
       {/* Colored Top Section */}
@@ -29,6 +32,7 @@ function DestinationCard({ destination }) {
       </div>
 
     </div>
+    </Link>
   )
 }
 
