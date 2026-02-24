@@ -35,6 +35,13 @@ function LandingPage() {
         </div>
       </section>
 
+<section className="max-w-7xl mx-auto px-4 py-8">
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">
+          🧪 API Test (Requirement)
+        </h2>
+        <WeatherTest />
+      </section>
+
       {/* Destinations Grid - Matching Figma */}
       <section className="max-w-7xl mx-auto px-4 py-20">
         <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">

@@ -18,9 +18,17 @@ function Navbar() {
 <Link to="/budget" className="text-gray-700 hover:text-blue-600 font-medium transition">
   Budget
 </Link>
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-lg" hover:text-blue-600>
-              Sign In
-            </button>
+            <button 
+  className="px-6 py-2 rounded-lg font-semibold transition hover:opacity-90"
+  style={{
+    backgroundColor: '#2563EB',
+    color: 'white',
+    border: 'none',
+    cursor: 'pointer'
+  }}
+>
+  Sign In
+</button>
             
           </div>
         </div>
