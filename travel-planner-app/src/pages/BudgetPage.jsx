@@ -9,7 +9,7 @@ function BudgetPage() {
           This page will help you track your travel expenses.
         </p>
         <p className="text-sm text-gray-500 mt-4">
-          (We'll build this in Week 4!)
+          (Under construction)
         </p>
       </div>
     </div>
