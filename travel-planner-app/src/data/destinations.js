@@ -4,65 +4,149 @@ export const destinations = [
     name: 'Paris',
     country: 'France',
     emoji: '🗼',
-    color: '#B4E7CE', // Mint green (like your Figma)
+    color: '#B4E7CE',
     priceFrom: 120,
     rating: 4.8,
-    description: 'The City of Light, famous for the Eiffel Tower, art, and cuisine.',
-    attractions: ['Eiffel Tower', 'Louvre Museum', 'Notre-Dame Cathedral', 'Arc de Triomphe'],
+    description: 'The City of Light, famous for the Eiffel Tower, world-class art museums, and exquisite cuisine. Experience romantic streets, historic landmarks, and vibrant culture.',
+    attractions: [
+      { name: 'Eiffel Tower', type: 'Landmark', description: 'Iconic iron tower with city views' },
+      { name: 'Louvre Museum', type: 'Museum', description: 'World\'s largest art museum' },
+      { name: 'Notre-Dame Cathedral', type: 'Historic', description: 'Gothic cathedral masterpiece' },
+      { name: 'Arc de Triomphe', type: 'Monument', description: 'Famous victory monument' },
+    ],
+    accommodations: [
+      { name: 'Hotel Le Marais', price: 150, rating: 4.5 },
+      { name: 'Montmartre Inn', price: 120, rating: 4.3 },
+      { name: 'Champs Elysees Suite', price: 200, rating: 4.7 },
+    ],
+    weather: {
+      city: 'Paris',
+      country: 'FR'
+    }
   },
   {
     id: 2,
     name: 'Ghana',
     country: 'Accra',
     emoji: '🏖️',
-    color: '#FDE68A', // Yellow (like your Figma)
+    color: '#FDE68A',
     priceFrom: 200,
     rating: 4.6,
-    description: 'Rich culture, beautiful beaches, and warm hospitality.',
-    attractions: ['Kakum National Park', 'Cape Coast Castle', 'Labadi Beach'],
+    description: 'Rich culture, stunning beaches, and warm hospitality. Discover historic castles, vibrant markets, and beautiful coastal scenery.',
+    attractions: [
+      { name: 'Kakum National Park', type: 'Nature', description: 'Rainforest canopy walkway' },
+      { name: 'Cape Coast Castle', type: 'Historic', description: 'UNESCO World Heritage site' },
+      { name: 'Labadi Beach', type: 'Beach', description: 'Popular sandy beach' },
+      { name: 'Elmina Castle', type: 'Historic', description: 'Historic trading post' },
+    ],
+    accommodations: [
+      { name: 'Accra Beach Hotel', price: 180, rating: 4.4 },
+      { name: 'Golden Tulip', price: 200, rating: 4.6 },
+      { name: 'Movenpick Ambassador', price: 220, rating: 4.8 },
+    ],
+    weather: {
+      city: 'Accra',
+      country: 'GH'
+    }
   },
   {
     id: 3,
-    name: 'UK',
-    country: 'London',
+    name: 'London',
+    country: 'United Kingdom',
     emoji: '🏰',
-    color: '#93C5FD', // Blue (like your Figma)
+    color: '#93C5FD',
     priceFrom: 95,
     rating: 4.9,
-    description: 'Historic landmarks, royal palaces, and vibrant culture.',
-    attractions: ['Big Ben', 'Buckingham Palace', 'Tower Bridge', 'London Eye'],
+    description: 'Historic landmarks, royal palaces, and vibrant culture. Experience Big Ben, world-class museums, and diverse neighborhoods.',
+    attractions: [
+      { name: 'Big Ben', type: 'Landmark', description: 'Iconic clock tower' },
+      { name: 'Buckingham Palace', type: 'Royal', description: 'Queen\'s official residence' },
+      { name: 'Tower Bridge', type: 'Landmark', description: 'Famous drawbridge' },
+      { name: 'London Eye', type: 'Attraction', description: 'Giant observation wheel' },
+    ],
+    accommodations: [
+      { name: 'The Savoy', price: 250, rating: 4.9 },
+      { name: 'Premier Inn', price: 95, rating: 4.2 },
+      { name: 'Hilton London', price: 180, rating: 4.6 },
+    ],
+    weather: {
+      city: 'London',
+      country: 'GB'
+    }
   },
   {
     id: 4,
     name: 'Tokyo',
     country: 'Japan',
     emoji: '🗾',
-    color: '#DDD6FE', // Purple
+    color: '#DDD6FE',
     priceFrom: 150,
     rating: 4.9,
-    description: 'A vibrant blend of traditional and modern culture.',
-    attractions: ['Senso-ji Temple', 'Tokyo Tower', 'Shibuya Crossing'],
+    description: 'A vibrant blend of traditional and modern culture. Experience ancient temples, cutting-edge technology, and incredible cuisine.',
+    attractions: [
+      { name: 'Senso-ji Temple', type: 'Temple', description: 'Ancient Buddhist temple' },
+      { name: 'Tokyo Tower', type: 'Landmark', description: 'Communications tower' },
+      { name: 'Shibuya Crossing', type: 'Urban', description: 'World\'s busiest intersection' },
+      { name: 'Mount Fuji View', type: 'Nature', description: 'Iconic mountain views' },
+    ],
+    accommodations: [
+      { name: 'Park Hyatt Tokyo', price: 300, rating: 4.8 },
+      { name: 'Capsule Hotel', price: 50, rating: 4.0 },
+      { name: 'Tokyo Station Hotel', price: 200, rating: 4.7 },
+    ],
+    weather: {
+      city: 'Tokyo',
+      country: 'JP'
+    }
   },
   {
     id: 5,
     name: 'Dubai',
     country: 'UAE',
     emoji: '🕌',
-    color: '#FECACA', // Light red
+    color: '#FECACA',
     priceFrom: 200,
     rating: 4.8,
-    description: 'Luxury, modern architecture, and desert adventures.',
-    attractions: ['Burj Khalifa', 'Dubai Mall', 'Palm Jumeirah'],
+    description: 'Luxury, modern architecture, and desert adventures. Experience record-breaking buildings, shopping, and Arabian culture.',
+    attractions: [
+      { name: 'Burj Khalifa', type: 'Skyscraper', description: 'World\'s tallest building' },
+      { name: 'Dubai Mall', type: 'Shopping', description: 'Massive shopping complex' },
+      { name: 'Palm Jumeirah', type: 'Island', description: 'Artificial palm-shaped island' },
+      { name: 'Desert Safari', type: 'Adventure', description: 'Dune bashing experience' },
+    ],
+    accommodations: [
+      { name: 'Burj Al Arab', price: 500, rating: 5.0 },
+      { name: 'Atlantis The Palm', price: 350, rating: 4.8 },
+      { name: 'JW Marriott', price: 200, rating: 4.6 },
+    ],
+    weather: {
+      city: 'Dubai',
+      country: 'AE'
+    }
   },
   {
     id: 6,
     name: 'Bali',
     country: 'Indonesia',
     emoji: '🏝️',
-    color: '#FED7AA', // Orange
+    color: '#FED7AA',
     priceFrom: 80,
     rating: 4.9,
-    description: 'Tropical paradise with beaches, temples, and culture.',
-    attractions: ['Uluwatu Temple', 'Rice Terraces', 'Beaches'],
+    description: 'Tropical paradise with beaches, temples, and culture. Experience stunning rice terraces, spiritual temples, and beach paradise.',
+    attractions: [
+      { name: 'Uluwatu Temple', type: 'Temple', description: 'Cliffside temple with sunset views' },
+      { name: 'Tegallalang Rice Terraces', type: 'Nature', description: 'Stunning stepped rice fields' },
+      { name: 'Seminyak Beach', type: 'Beach', description: 'Upscale beach with resorts' },
+      { name: 'Sacred Monkey Forest', type: 'Nature', description: 'Temple complex with monkeys' },
+    ],
+    accommodations: [
+      { name: 'Four Seasons Bali', price: 300, rating: 4.9 },
+      { name: 'Ubud Hanging Gardens', price: 250, rating: 4.8 },
+      { name: 'Beach Bungalow', price: 80, rating: 4.3 },
+    ],
+    weather: {
+      city: 'Bali',
+      country: 'ID'
+    }
   }
 ]
