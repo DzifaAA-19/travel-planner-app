@@ -5,9 +5,11 @@ import LandingPage from './pages/LandingPage'
 import DestinationDetails from './pages/DestinationDetails'
 import ItineraryPage from './pages/ItineraryPage'
 import BudgetPage from './pages/BudgetPage'
+import { TripProvider } from './context/TripContext'
 
 function App() {
   return (
+    <TripProvider>
     <BrowserRouter>
       <div className="flex flex-col min-h-screen">
         <Navbar />
@@ -24,6 +26,7 @@ function App() {
         <Footer />
       </div>
     </BrowserRouter>
+    </TripProvider>
   )
 }
 

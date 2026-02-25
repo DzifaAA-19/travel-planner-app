@@ -1,10 +1,18 @@
 import { useParams, Link } from 'react-router-dom'
 import { destinations } from '../data/destinations'
 import WeatherWidget from '../components/WeatherWidget'
+import { useState } from 'react'
+import { useTrips } from '../context/TripContext'
 
 function DestinationDetails() {
   const { id } = useParams()
   const destination = destinations.find(d => d.id === parseInt(id))
+   const { addTrip, trips } = useTrips()
+  const [showModal, setShowModal] = useState(false)
+  const [tripDates, setTripDates] = useState({
+    startDate: '',
+    endDate: ''
+  })
 
   if (!destination) {
     return (
@@ -17,6 +25,25 @@ function DestinationDetails() {
         </div>
       </div>
     )
+  }
+
+  const handleAddToTrip = () => {
+    if (!tripDates.startDate || !tripDates.endDate) {
+      alert('Please select start and end dates')
+      return
+    }
+
+    addTrip({
+      destination: destination.name,
+      destinationId: destination.id,
+      startDate: tripDates.startDate,
+      endDate: tripDates.endDate,
+      emoji: destination.emoji,
+      color: destination.color
+    })
+
+    alert(`${destination.name} added to your trips!`)
+    setShowModal(false)
   }
 
   return (
@@ -147,10 +174,63 @@ function DestinationDetails() {
             </div>
 
             {/* Add to Trip Button */}
-            <button className="w-full bg-blue-600 text-white py-4 rounded-xl font-semibold hover:bg-blue-700 transition shadow-lg">
-              Add to My Trip
-            </button>
+<button 
+  onClick={() => setShowModal(true)}
+  className="w-full bg-blue-600 text-white py-4 rounded-xl font-semibold hover:bg-blue-700 transition shadow-lg"
+>
+  Add to My Trip
+</button>
 
+{/* Modal */}
+{showModal && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+    <div className="bg-white rounded-2xl p-8 max-w-md w-full">
+      <h3 className="text-2xl font-bold mb-6">Plan Your Trip to {destination.name}</h3>
+      
+      <div className="space-y-4 mb-6">
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Start Date
+          </label>
+          <input 
+            type="date"
+            value={tripDates.startDate}
+            onChange={(e) => setTripDates({...tripDates, startDate: e.target.value})}
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+          />
+        </div>
+        
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            End Date
+          </label>
+          <input 
+            type="date"
+            value={tripDates.endDate}
+            onChange={(e) => setTripDates({...tripDates, endDate: e.target.value})}
+            min={tripDates.startDate}
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+          />
+        </div>
+      </div>
+      
+      <div className="flex gap-3">
+        <button 
+          onClick={() => setShowModal(false)}
+          className="flex-1 px-6 py-3 border border-gray-300 rounded-lg font-semibold hover:bg-gray-50"
+        >
+          Cancel
+        </button>
+        <button 
+          onClick={handleAddToTrip}
+          className="flex-1 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700"
+        >
+          Add Trip
+        </button>
+      </div>
+    </div>
+  </div>
+)}
             {/* Quick Info */}
             <div className="bg-blue-50 rounded-xl p-6">
               <h3 className="font-semibold text-gray-900 mb-3">Quick Info</h3>
