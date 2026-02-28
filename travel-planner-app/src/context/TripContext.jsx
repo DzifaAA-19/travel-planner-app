@@ -73,6 +73,50 @@ export function TripProvider({ children }) {
     }))
   }
 
+  const updateTripBudget = (tripId, budget) => {
+    setTrips(trips.map(trip => 
+      trip.id === tripId ? { ...trip, budget: budget } : trip
+    ))
+  }
+
+  const addExpense = (tripId, expense) => {
+    setTrips(trips.map(trip => {
+      if (trip.id === tripId) {
+        return {
+          ...trip,
+          expenses: [...(trip.expenses || []), { ...expense, id: Date.now() }]
+        }
+      }
+      return trip
+    }))
+  }
+
+  const deleteExpense = (tripId, expenseId) => {
+    setTrips(trips.map(trip => {
+      if (trip.id === tripId) {
+        return {
+          ...trip,
+          expenses: (trip.expenses || []).filter(e => e.id !== expenseId)
+        }
+      }
+      return trip
+    }))
+  }
+
+  const updateExpense = (tripId, expenseId, updates) => {
+    setTrips(trips.map(trip => {
+      if (trip.id === tripId) {
+        return {
+          ...trip,
+          expenses: (trip.expenses || []).map(e => 
+            e.id === expenseId ? { ...e, ...updates } : e
+          )
+        }
+      }
+      return trip
+    }))
+  }
+
   return (
     <TripContext.Provider value={{
       trips,
@@ -81,7 +125,11 @@ export function TripProvider({ children }) {
       addTrip,
       addActivity,
       deleteActivity,
-      updateActivity
+      updateActivity,
+      updateTripBudget,
+      addExpense,
+      deleteExpense,
+      updateExpense
     }}>
       {children}
     </TripContext.Provider>
