@@ -4,18 +4,27 @@ import { Link } from 'react-router-dom'
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+ 
+  const handleLinkClick = () => {
+    setMobileMenuOpen(false)
+  }
+
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
           
-          {/* Logo - Left Side */}
-          <Link to="/" className="text-2xl font-bold text-blue-600">
+          {/* Logo */}
+          <Link 
+            to="/" 
+            className="text-2xl font-bold text-blue-600 flex-shrink-0"
+            onClick={handleLinkClick}
+          >
             🌍 TravelPlanner
           </Link>
 
-          {/* Desktop Navigation - Hidden on Mobile */}
-          <div className="hidden md:flex items-center gap-6">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
             <Link 
               to="/" 
               className="text-gray-700 hover:text-blue-600 font-medium transition"
@@ -34,96 +43,93 @@ function Navbar() {
             >
               Budget
             </Link>
-            
-            <button 
-              className="px-6 py-2 rounded-lg font-semibold transition hover:opacity-90"
-              style={{
-                backgroundColor: '#2563EB',
-                color: 'white',
-                border: 'none',
-                cursor: 'pointer'
-              }}
-            >
+            <button className="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">
               Sign In
             </button>
           </div>
 
-          {/* Mobile Menu Button - Visible on Mobile Only */}
+          {/* Mobile menu button */}
           <div className="md:hidden">
-            <button 
+            <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-700 hover:text-blue-600 p-2"
-              aria-label="Toggle menu"
+              type="button"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+              aria-controls="mobile-menu"
+              aria-expanded={mobileMenuOpen}
             >
-              <svg 
-                className="h-6 w-6" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor"
-              >
-                {mobileMenuOpen ? (
-                  // X icon when menu is open
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={2} 
-                    d="M6 18L18 6M6 6l12 12" 
+              <span className="sr-only">Open main menu</span>
+              {!mobileMenuOpen ? (
+                <svg
+                  className="block h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
                   />
-                ) : (
-                  // Hamburger icon when menu is closed
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={2} 
-                    d="M4 6h16M4 12h16M4 18h16" 
+                </svg>
+              ) : (
+                <svg
+                  className="block h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
                   />
-                )}
-              </svg>
+                </svg>
+              )}
             </button>
           </div>
-
         </div>
       </div>
-      
-      {/* Mobile Menu - Slides Down When Open */}
-      {mobileMenuOpen && (
-        <div className="md:hidden border-t border-gray-200 bg-white">
-          <div className="px-4 py-3 space-y-1">
-            <Link 
-              to="/" 
-              className="block py-3 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg px-3 font-medium transition"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link 
-              to="/trips" 
-              className="block py-3 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg px-3 font-medium transition"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              My Trips
-            </Link>
-            <Link 
-              to="/budget" 
-              className="block py-3 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg px-3 font-medium transition"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Budget
-            </Link>
-            <button 
-              className="w-full mt-2 px-6 py-3 rounded-lg font-semibold"
-              style={{
-                backgroundColor: '#2563EB',
-                color: 'white',
-                border: 'none',
-                cursor: 'pointer'
-              }}
-            >
+
+      {/* Mobile menu */}
+      <div
+        className={`md:hidden ${mobileMenuOpen ? 'block' : 'hidden'}`}
+        id="mobile-menu"
+      >
+        <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200 mobile-menu">
+          <Link
+            to="/"
+            onClick={handleLinkClick}
+            className="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition"
+          >
+            Home
+          </Link>
+          <Link
+            to="/trips"
+            onClick={handleLinkClick}
+            className="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition"
+          >
+            My Trips
+          </Link>
+          <Link
+            to="/budget"
+            onClick={handleLinkClick}
+            className="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition"
+          >
+            Budget
+          </Link>
+          <div className="px-3 pt-2">
+            <button className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
               Sign In
             </button>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   )
 }
