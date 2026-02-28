@@ -6,7 +6,8 @@ import DestinationDetails from './pages/DestinationDetails'
 import ItineraryPage from './pages/ItineraryPage'
 import BudgetPage from './pages/BudgetPage'
 import { TripProvider } from './context/TripContext'
-
+import NotFound
+ from './pages/NotFound'
 function App() {
   return (
     <TripProvider>
@@ -20,6 +21,7 @@ function App() {
             <Route path="/destinations/:id" element={<DestinationDetails />} />
             <Route path="/trips" element={<ItineraryPage />} />
             <Route path="/budget" element={<BudgetPage />} />
+            <Route path="*" element={<NotFound/>} />
           </Routes>
         </main>
         
@@ -27,6 +29,7 @@ function App() {
       </div>
     </BrowserRouter>
     </TripProvider>
+    
   )
 }
 

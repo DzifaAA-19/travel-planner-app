@@ -9,14 +9,22 @@ function LandingPage() {
   const [searchResults, setSearchResults] = useState(destinations)
   const [searchQuery, setSearchQuery] = useState('')
 
-  const handleSearch = (query) => {
-    setSearchQuery(query)
+  const [isSearching, setIsSearching] = useState(false)
+
+const handleSearch = (query) => {
+  setIsSearching(true)
+  setSearchQuery(query)
+  
+  // Simulate brief processing time for better UX
+  setTimeout(() => {
     const filtered = destinations.filter(dest => 
       dest.name.toLowerCase().includes(query.toLowerCase()) ||
       dest.country.toLowerCase().includes(query.toLowerCase())
     )
     setSearchResults(filtered)
-  }
+    setIsSearching(false)
+  }, 100)
+}
 
   const clearSearch = () => {
     setSearchQuery('')
@@ -43,7 +51,7 @@ function LandingPage() {
       {/* API Test Section */}
       <section className="max-w-7xl mx-auto px-4 py-8">
         <h2 className="text-2xl font-bold text-gray-900 mb-4">
-          🧪 API Test (Week 1 Requirement)
+          🧪 API Test 
         </h2>
         <WeatherTest />
       </section>

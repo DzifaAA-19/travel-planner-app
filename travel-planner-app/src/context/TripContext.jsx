@@ -40,7 +40,7 @@ export function TripProvider({ children }) {
       if (trip.id === tripId) {
         return {
           ...trip,
-          activities: [...trip.activities, { ...activity, id: Date.now() }]
+          activities: [...(trip.activities || []), { ...activity, id: Date.now() }]
         }
       }
       return trip
@@ -79,7 +79,7 @@ export function TripProvider({ children }) {
     ))
   }
 
-  const addExpense = (tripId, expense) => {
+ const addExpense = (tripId, expense) => {
     setTrips(trips.map(trip => {
       if (trip.id === tripId) {
         return {

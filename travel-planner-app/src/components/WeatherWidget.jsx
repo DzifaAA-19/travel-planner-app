@@ -32,14 +32,19 @@ function WeatherWidget({ city, country }) {
     )
   }
 
-  if (error) {
+if (error) {
     return (
       <div className="bg-gray-50 rounded-xl p-6">
-        <p className="text-gray-500 text-sm">Weather data unavailable</p>
+        <h3 className="font-semibold text-gray-900 mb-2">Weather Unavailable</h3>
+        <p className="text-gray-500 text-sm">
+          {error === 'Weather data unavailable' 
+            ? 'Unable to fetch weather data at this time.'
+            : 'Weather service temporarily unavailable.'}
+        </p>
       </div>
     )
   }
-
+  
   return (
     <div className="bg-gradient-to-br from-blue-400 to-blue-600 text-white rounded-xl p-6">
       <div className="flex items-center justify-between">
