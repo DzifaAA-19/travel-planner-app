@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import AuthModal from './AuthModal'
 
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
+  const [showAuthModal, setShowAuthModal] = useState(false)
  
   const handleLinkClick = () => {
     setMobileMenuOpen(false)
@@ -124,12 +125,22 @@ function Navbar() {
             Budget
           </Link>
           <div className="px-3 pt-2">
-            <button className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-              Sign In
-            </button>
+            <button 
+  onClick={() => {
+    setShowAuthModal(true)
+    setMobileMenuOpen(false)
+  }}
+  className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+>
+  Sign In
+</button>
           </div>
         </div>
       </div>
+    <AuthModal 
+        isOpen={showAuthModal} 
+        onClose={() => setShowAuthModal(false)} 
+      />
     </nav>
   )
 }
