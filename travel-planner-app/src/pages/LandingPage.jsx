@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { destinations } from '../data/destinations'
 import DestinationCard from '../components/DestinationCard'
 import SearchBar from '../components/SearchBar'
-import WeatherTest from '../components/WeatherTest'
 
 
 function LandingPage() {
@@ -48,15 +47,7 @@ const handleSearch = (query) => {
         </div>
       </section>
 
-      {/* API Test Section */}
-      <section className="max-w-7xl mx-auto px-4 py-8">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">
-          🧪 API Test 
-        </h2>
-        <WeatherTest />
-      </section>
-
-      {/* Destinations Grid */}
+            {/* Destinations Grid */}
       <section className="max-w-7xl mx-auto px-4 py-20">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-4xl font-bold text-gray-900">

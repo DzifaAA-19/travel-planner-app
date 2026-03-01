@@ -5,6 +5,7 @@ export const destinations = [
     country: 'France',
     emoji: '🗼',
     color: '#B4E7CE',
+    imageUrl: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80', // Eiffel Tower
     priceFrom: 120,
     rating: 4.8,
     description: 'The City of Light, famous for the Eiffel Tower, world-class art museums, and exquisite cuisine. Experience romantic streets, historic landmarks, and vibrant culture.',
@@ -30,6 +31,7 @@ export const destinations = [
     country: 'Accra',
     emoji: '🏖️',
     color: '#FDE68A',
+    imageUrl: 'https://images.unsplash.com/photo-1651860282137-a59f01d2db7b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2hhbmElMjBiZWFjaHxlbnwwfHwwfHx8MA%3D%3D', // Accra beach
     priceFrom: 200,
     rating: 4.6,
     description: 'Rich culture, stunning beaches, and warm hospitality. Discover historic castles, vibrant markets, and beautiful coastal scenery.',
@@ -55,6 +57,7 @@ export const destinations = [
     country: 'United Kingdom',
     emoji: '🏰',
     color: '#93C5FD',
+    imageUrl: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80', // London
     priceFrom: 95,
     rating: 4.9,
     description: 'Historic landmarks, royal palaces, and vibrant culture. Experience Big Ben, world-class museums, and diverse neighborhoods.',
@@ -80,6 +83,7 @@ export const destinations = [
     country: 'Japan',
     emoji: '🗾',
     color: '#DDD6FE',
+    imageUrl: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80', // Tokyo
     priceFrom: 150,
     rating: 4.9,
     description: 'A vibrant blend of traditional and modern culture. Experience ancient temples, cutting-edge technology, and incredible cuisine.',
@@ -105,6 +109,7 @@ export const destinations = [
     country: 'UAE',
     emoji: '🕌',
     color: '#FECACA',
+    imageUrl: 'https://images.unsplash.com/photo-1732360487679-5dd25e9dbdf9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGR1YmFpJTIwbW9kZXJuJTIwYXJjaGl0ZWN0dXJlfGVufDB8fDB8fHww', // Dubai
     priceFrom: 200,
     rating: 4.8,
     description: 'Luxury, modern architecture, and desert adventures. Experience record-breaking buildings, shopping, and Arabian culture.',
@@ -130,6 +135,7 @@ export const destinations = [
     country: 'Indonesia',
     emoji: '🏝️',
     color: '#FED7AA',
+    imageUrl: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80', // Bali
     priceFrom: 80,
     rating: 4.9,
     description: 'Tropical paradise with beaches, temples, and culture. Experience stunning rice terraces, spiritual temples, and beach paradise.',

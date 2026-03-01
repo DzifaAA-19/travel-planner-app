@@ -63,11 +63,23 @@ function DestinationDetails() {
       {/* Hero Image Section */}
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 py-8">
-          <div 
-            className="h-96 rounded-2xl flex items-center justify-center text-8xl"
-            style={{ backgroundColor: destination.color }}
-          >
-            {destination.emoji}
+          <div className="h-96 rounded-2xl overflow-hidden relative shadow-2xl">
+            <img 
+              src={destination.imageUrl} 
+              alt={destination.name}
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                e.target.src = `https://via.placeholder.com/1200x400/4F46E5/ffffff?text=${destination.name}`
+              }}
+            />
+            {/* Overlay with gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end justify-start p-8">
+              <div className="text-white">
+                <div className="text-6xl mb-4">{destination.emoji}</div>
+                <h1 className="text-5xl font-bold drop-shadow-lg">{destination.name}</h1>
+                <p className="text-2xl mt-2 drop-shadow-lg">{destination.country}</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
