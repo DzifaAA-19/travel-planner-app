@@ -8,7 +8,7 @@ A comprehensive travel planning application built with React, Tailwind CSS, and 
 
 ## 🚀 Live Demo
 
-**[View Live App](https://your-app.vercel.app)** ← Replace with your Vercel URL
+**[View Live App](https://travel-planner-app-zeta-snowy.vercel.app/)** ← Replace with your Vercel URL
 
 ## ✨ Features
 
@@ -62,7 +62,7 @@ A comprehensive travel planning application built with React, Tailwind CSS, and 
 
 ### APIs
 - **OpenWeather API** - Real-time weather data
-- **REST Countries API** - Country information
+
 
 ### Tools
 - **Git & GitHub** - Version control
@@ -75,81 +75,6 @@ A comprehensive travel planning application built with React, Tailwind CSS, and 
 - Node.js 18+ and npm
 - Git
 
-### Setup
-
-1. **Clone the repository**
-```bash
-git clone https://github.com/YOUR_USERNAME/travel-planner-app.git
-cd travel-planner-app
-```
-
-2. **Install dependencies**
-```bash
-npm install
-```
-
-3. **Create environment variables**
-```bash
-# Create .env file in root directory
-touch .env
-```
-
-Add your OpenWeather API key:
-```
-VITE_OPENWEATHER_API_KEY=your_api_key_here
-```
-
-4. **Start development server**
-```bash
-npm run dev
-```
-
-5. **Open browser**
-```
-http://localhost:5173
-```
-
-## 🔑 Getting API Keys
-
-### OpenWeather API (Required for weather features)
-1. Go to [OpenWeatherMap.org](https://openweathermap.org/api)
-2. Sign up for a free account
-3. Navigate to API keys section
-4. Copy your key
-5. Add to `.env` file
-6. Note: New keys take 1-2 hours to activate
-
-## 📁 Project Structure
-```
-travel-planner-app/
-├── public/                # Static assets
-├── src/
-│   ├── components/       # Reusable components
-│   │   ├── Navbar.jsx
-│   │   ├── Footer.jsx
-│   │   ├── SearchBar.jsx
-│   │   ├── DestinationCard.jsx
-│   │   ├── WeatherWidget.jsx
-│   │   └── WeatherTest.jsx
-│   ├── context/          # React Context
-│   │   └── TripContext.jsx
-│   ├── data/             # Mock data
-│   │   └── destinations.js
-│   ├── pages/            # Page components
-│   │   ├── LandingPage.jsx
-│   │   ├── DestinationDetails.jsx
-│   │   ├── ItineraryPage.jsx
-│   │   ├── BudgetPage.jsx
-│   │   └── NotFound.jsx
-│   ├── App.jsx           # Main app component
-│   ├── main.jsx          # Entry point
-│   └── index.css         # Global styles
-├── .env                  # Environment variables (not committed)
-├── .gitignore
-├── package.json
-├── tailwind.config.js
-└── vite.config.js
-```
 
 ## 🎯 Usage
 
@@ -227,13 +152,12 @@ npm run preview
 
 ## 📝 License
 
-This project was created as a capstone project for [Your Course/School Name].
+This project was created as a capstone project for ALX
 
 ## 👤 Author
 
 **Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+- GitHub: [@DzifaAA-19](https://github.com/DzifaAA-19)
 
 ## 🙏 Acknowledgments
 
@@ -245,7 +169,7 @@ This project was created as a capstone project for [Your Course/School Name].
 
 ## 📧 Contact
 
-For questions or feedback, please open an issue on GitHub or contact [your.email@example.com]
+For questions or feedback, please open an issue on GitHub or contact [agbakpedzifaaku3@gmail.com]
 
 ---
 
