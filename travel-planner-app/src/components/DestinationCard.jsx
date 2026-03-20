@@ -15,9 +15,7 @@ function DestinationCard({ destination }) {
               e.target.src = `https://via.placeholder.com/400x300/4F46E5/ffffff?text=${destination.name}`
             }}
           />
-          <div className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg">
-            <span className="text-2xl">{destination.emoji}</span>
-          </div>
+          
         </div>
 
         {/* Content */}
