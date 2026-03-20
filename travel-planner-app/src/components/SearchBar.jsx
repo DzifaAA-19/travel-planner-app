@@ -50,7 +50,7 @@ function SearchBar({ onSearch }) {
         </div>
         <button 
           type="submit"
-          className="w-full bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700 transition shadow-lg text-lg"
+          className="w-full bg-blue-600 text-white py-4 rounded-xl font-semibold hover:bg-blue-700 transition shadow-lg text-lg"
         >
           Search
         </button>
